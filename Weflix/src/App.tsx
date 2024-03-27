@@ -1,7 +1,7 @@
 import './App.css'
-import Home from './views/home'
+import Discovery from './views/discovery'
 import TopNav from './components/navBar/topNav'
-import LeftNav from './components/navBar/leftNav'
+import Main from './views/main/main'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -9,10 +9,11 @@ function App() {
   return (
     <BrowserRouter>
       <TopNav />
-      <LeftNav />
-      <Routes>
-        <Route path="/" element={<Home />} />
-      </Routes>
+      <Main>
+        <Routes>
+          <Route path="/" element={<Discovery />} />
+        </Routes>
+      </Main>
     </BrowserRouter>
   )
 }

@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom";
+import Link  from "./link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCloudArrowDown,
   faGear,
   faMoon,
-  faStopwatch
+  faStopwatch,
 } from "@fortawesome/free-solid-svg-icons";
-import { faClock, faStar } from '@fortawesome/free-regular-svg-icons';
+import { faClock, faStar } from "@fortawesome/free-regular-svg-icons";
 import { faDiscourse } from "@fortawesome/free-brands-svg-icons";
 
 export default function LeftNav() {
@@ -17,21 +17,22 @@ export default function LeftNav() {
           <h4>Menu</h4>
           <ul>
             <li>
-              <NavLink to="/discovery" activeClassName="active">
-                <FontAwesomeIcon icon={faDiscourse} size="lg"/> Discovery
-              </NavLink>
+              <Link to="/">
+                <FontAwesomeIcon icon={faDiscourse} size="lg" />
+                Discovery
+              </Link>
             </li>
             <li>
-              <NavLink to="/top-rated" activeClassName="active">
-                <FontAwesomeIcon icon={faStar} size="lg"/>
+              <Link to="/top-rated">
+                <FontAwesomeIcon icon={faStar} size="lg" />
                 Top Rated
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink to="/coming-soon" activeClassName="active">
-                <FontAwesomeIcon icon={faStopwatch} size="lg"/>
+              <Link to="/coming-soon">
+                <FontAwesomeIcon icon={faStopwatch} size="lg" />
                 Coming Soon
-              </NavLink>
+              </Link>
             </li>
           </ul>
         </div>
@@ -39,26 +40,26 @@ export default function LeftNav() {
           <h4>Library</h4>
           <ul>
             <li>
-              <NavLink to="/recent-played" activeClassName="active">
-                <FontAwesomeIcon icon={faClock} size="lg"/>
+              <Link to="/recent-played">
+                <FontAwesomeIcon icon={faClock} size="lg" />
                 Recent Played
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <NavLink to="/download" activeClassName="active">
-                <FontAwesomeIcon icon={faCloudArrowDown} size="lg"/>
+              <Link to="/download">
+                <FontAwesomeIcon icon={faCloudArrowDown} size="lg" />
                 Download
-              </NavLink>
+              </Link>
             </li>
             <li>
-              <FontAwesomeIcon icon={faMoon} size="lg"/>
+              <FontAwesomeIcon icon={faMoon} size="lg" />
               Dark Mode
             </li>
             <li>
-                <NavLink to="/settings" activeClassName="active">
-                    <FontAwesomeIcon icon={faGear} size="lg"/>
-                    Setting
-                </NavLink>
+              <Link to="/settings">
+                <FontAwesomeIcon icon={faGear} size="lg" />
+                Setting
+              </Link>
             </li>
           </ul>
         </div>
