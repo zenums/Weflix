@@ -1,0 +1,58 @@
+/* Setup global css */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@200&family=Inter:wght@100..900&family=Quicksand:wght@300&display=swap');
+
+/* Déclaration de variables */
+:root {
+  --main-color: #FF2222;
+  --secondary-color: #0D0C0F;
+  --success-color: #00C566;
+  --error-color: #EB3F5E;
+  --warning-color: #FFCD1A;
+  --dark-smooth: #1A161F;
+  --line : #29282F;
+  --grayscale-10 : #F9F9F9;
+  --grayscale-20 : #ECF1F6;
+  --grayscale-30 : #E3E9ED;
+  --grayscale-40 : #D1D8DD;
+  --grayscale-50 : #BFC6CC;
+  --grayscale-60 : #9CA4AB;
+  --grayscale-70 : #78828A;
+  --grayscale-80 : #66707A;
+  --grayscale-90 : #434E58;
+  --grayscale-100 : #171725;
+  --font-text: 'Inter', sans-serif;
+  --font-heading: 'Inter', sans-serif;
+}
+
+
+body {
+  font-family: var(--font-text);
+  background-color: var(--secondary-color) ;
+}
+h1, h2, h3 {
+  font-family: var(--font-heading);
+}
+h1{
+  font-size: 64px;
+}
+h2{
+  font-size: 56px;
+}
+h3{
+  font-size: 48px;
+}
+h4{
+  font-size: 40px;
+}
+h5{
+  font-size: 32px;
+}
+h6{
+  font-size: 24px;
+}
+a{
+  font-size: 15px;
+}
+p{
+  font-size: 16px;
+}
