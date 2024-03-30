@@ -13,7 +13,6 @@ type ButtonProps = {
   variant: VariantType;
   size: Size;
   color: string;
-  padding?: string;
   children: string;
 } & ComponentPropsWithRef<"button">;
 
@@ -22,7 +21,6 @@ export default function Button({
   children,
   size,
   color,
-  padding,
   ...rest
 }: ButtonProps) {
   let variantClass: string = "";
@@ -62,7 +60,6 @@ export default function Button({
     <button
       className={`button ${variantClass} ${sizeClass} ${color}`}
       {...rest}
-      style={{ padding: padding }}
     >
       {children}
     </button>
