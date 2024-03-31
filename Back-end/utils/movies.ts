@@ -27,11 +27,3 @@ export const getApiMoviesTopRated = async () => {
     }
 }
 
-export const getApiMovieHeader = async (movieId: string) => {
-    try {
-        const data = await get(`/3/movie/${movieId}?language=fr`);
-        return data;
-    } catch (error) {
-        console.error("Erreur lors de la récupération des films à venir");
-    }
-}

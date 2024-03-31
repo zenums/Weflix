@@ -73,25 +73,10 @@ const getMoviesTopRated = async (request: Request, response: Response) => {
   }
 };
 
-const getMovieHeader = async (request: Request, response: Response) => {
-  const movieId = Number('823464');
 
-  try {
-    const movie: Movie = await getApiMovieHeader(movieId);
-    response.status(200).json(movie);
-  } catch (error) {
-    response
-      .status(500)
-      .json({
-        error:
-          "Une erreur est survenue lors de la récupération des informations du film.",
-      });
-  }
-};
 
 module.exports = {
   getMoviesPopulars,
   getMoviesPopularsbyGenre,
   getMoviesTopRated,
-  getMovieHeader,
 };

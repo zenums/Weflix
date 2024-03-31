@@ -1,0 +1,6 @@
+.round{
+    width: 5px;
+    height: 5px;
+    clip-path: circle();
+    background: var(--grayscale-60);
+}

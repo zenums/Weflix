@@ -1,0 +1,18 @@
+.tag{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 70px;
+   height: 30px;
+   border-radius: 12px;
+   color: var(--grayscale-10);
+   font-weight: 400;
+   text-transform: capitalize;
+   font-size: 15px;
+}
+.tag.primary{
+    background: var(--grayscale-100);
+}
+.tag.secondary{
+    background: rgba(253, 253, 253, 0.08);
+}

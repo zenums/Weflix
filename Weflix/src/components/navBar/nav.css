@@ -41,7 +41,7 @@
 
 /* NavLeft */
 .container-nav-left{
-    width: 180px;
+    width: 250px;
     height: 100%;
     padding: 40px;
 }
@@ -52,19 +52,28 @@
     align-items: flex-start;
     gap: 20px;
     height: 100%;
-    width: 180px;
+    width: 220px;
     background-color: var(--dark-smooth);
     padding: 40px 30px;
     position: fixed;
     left: 0;
-    top: 100px;
+    top: 65px;
     border-top-right-radius: 10px;
+    padding: 40px;
 }
 .nav.left h4{
     color : var(--grayscale-60);
     text-transform: uppercase;
     font-size: 15px;
     font-weight: 400;
+}
+.bloc-menu,.bloc-library{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    width: 100%;
+    margin-bottom: 30px;
 }
 .nav.left ul{
     list-style: none;

@@ -1,4 +1,4 @@
-import { ComponentPropsWithRef } from "react";
+import { ComponentPropsWithRef, ReactNode } from "react";
 import "./button.css";
 
 type VariantType =
@@ -12,8 +12,8 @@ type Size = "small" | "medium" | "large";
 type ButtonProps = {
   variant: VariantType;
   size: Size;
-  color: string;
-  children: string;
+  color?: string;
+  children: ReactNode;
 } & ComponentPropsWithRef<"button">;
 
 export default function Button({

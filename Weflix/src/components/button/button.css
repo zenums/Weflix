@@ -7,6 +7,12 @@
     border-radius: 25px;
     padding: 15px 25px;
     border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px;
+    font-weight: 500;
 }
 .primary{
     background: var(--background);

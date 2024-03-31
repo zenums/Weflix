@@ -5,6 +5,7 @@ import cors from 'cors';
 require('dotenv').config();
 const app = express();
 const moviesRouter = require('./routes/movies');
+const seriesRouter = require('./routes/series');
 
 // ********************************
 const PORT = process.env.PORT || 3000;
@@ -13,7 +14,8 @@ app.use(cors({
     origin: 'http://localhost:5173'
 }))
     .use(express.json())
-    .use('/movies', moviesRouter);
+    .use('/movies', moviesRouter)
+    .use('/series', seriesRouter);
 
 app.listen(PORT, () => {
     console.log("Server running at PORT: ", PORT);
