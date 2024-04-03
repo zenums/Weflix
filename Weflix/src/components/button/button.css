@@ -1,6 +1,9 @@
 .red{
     --background: var(--main-color);
 }
+.white{
+    --background: #fff;
+}
 
 
 .button{

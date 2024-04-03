@@ -8,6 +8,7 @@ import WatchlistIMG from "../../assets/watchlist.png";
 import Play from "../../assets/play.png";
 
 export default function MovieHeader() {
+
   const serieId: string = "60625";
 
   const { data: serie, isLoading } = useQuery(
@@ -28,26 +29,29 @@ export default function MovieHeader() {
   }
 
   return (
-    <div className="container-header-movie">
-        <div className="header-movie-infos">
-          <Tag variant="secondary">Series</Tag>
-          <h3>{serie.name}</h3>
-          <div className="tagline">
-            {serie.number_of_seasons} Seasons <Round />
-            {serie.number_of_episodes} Episodes <Round />
-            fantastic <Round />
-            netflix
-          </div>
-          <div className="container-btn">
-            <Button variant="primary" size="large" color="red">
-              <img src={Play} alt="" />
-              Watch Thriller
-            </Button>
-            <Button variant="tertiary" size="large">
-              <img src={WatchlistIMG} alt="" />
-              Add Watchlist
-            </Button>
-          </div>
+    <div
+      className="container-header-movie"
+      
+    >
+      <div className="header-movie-infos">
+        <Tag variant="secondary">Series</Tag>
+        <h3>{serie.name}</h3>
+        <div className="tagline">
+          {serie.number_of_seasons} Seasons <Round />
+          {serie.number_of_episodes} Episodes <Round />
+          fantastic <Round />
+          netflix
+        </div>
+        <div className="container-btn">
+          <Button variant="primary" size="large" color="red">
+            <img src={Play} alt="" />
+            Watch Thriller
+          </Button>
+          <Button variant="tertiary" size="large" color="white">
+            <img src={WatchlistIMG} alt="" />
+            Add Watchlist
+          </Button>
+        </div>
       </div>
     </div>
   );

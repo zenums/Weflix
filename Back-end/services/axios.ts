@@ -2,7 +2,7 @@ const axios = require('axios');
 type AxiosRequestConfig = typeof axios.AxiosRequestConfig;
 type AxiosError = typeof axios.AxiosError;
 
-const tokenTMDB = process.env.TMDB_API_KEY || "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxOWI4ZmQ5M2QzNjZlOTk5YWRiZGQ5OGI1YmFjYmE2ZiIsInN1YiI6IjY2MDg1OTMyZTYyNzE5MDE2MzBjZTRhNiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.T3moz1ttY4-4CMDVhM53minqAZz79MdhGnqJwpW3Vfg";
+const tokenTMDB = process.env.TMDB_API_KEY || "Back-end/services/axios.ts";
 
 const instanceTMDB = axios.create({
     baseURL: "https://api.themoviedb.org",

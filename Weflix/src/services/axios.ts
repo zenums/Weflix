@@ -2,7 +2,6 @@ import axios from "axios";
 
 const url_backend = import.meta.env.VITE_URIBACKEND;
 
-console.log(url_backend);
 
 const instance = axios.create({
     baseURL: url_backend,
@@ -35,5 +34,6 @@ const get = async (url: string) => {
         throw new Error("Échec de la requête Axios");
     }
 };
+
 
 export { get };
