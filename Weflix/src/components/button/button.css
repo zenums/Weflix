@@ -1,12 +1,11 @@
-.red{
+.button.red{
     --background: var(--main-color);
 }
-.white{
+.button.white{
     --background: #fff;
 }
 
-
-.button{
+.button.button{
     border-radius: 25px;
     padding: 15px 25px;
     border: none;
@@ -17,20 +16,33 @@
     gap: 10px;
     font-weight: 500;
 }
-.primary{
+.button.primary{
     background: var(--background);
     color: #fff;
 }
-.secondary{
+.button.secondary{
     background: transparent;
     border: 1px solid var(--background);
     color: var(--background);
 }
-.tertiary{
+.button.tertiary{
     background: transparent;
     color: var(--background);
 }
-.quaternary{
+.button.quaternary{
     background: var(--grayscale-20);
     color: var(--grayscale-60);
+}
+.button.small{
+    font-size: 13px;
+    padding: 8px 20px;
+}
+.button.medium{
+    font-size: 14px;
+    padding: 10px 25px;
+}
+.button.large{
+    font-size: 15px;
+    padding: 12px 30px;
+    width: 100%;
 }
