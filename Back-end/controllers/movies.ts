@@ -61,7 +61,7 @@ const getMoviesPopularsbyGenre = async (
 const getMoviesTopRated = async (request: Request, response: Response) => {
   try {
     const movies: Movie[] = await getApiMoviesTopRated();
-    const limitedMovies = movies.slice(0, 5);
+    const limitedMovies = movies.slice(0, 3);
     response.status(200).json(limitedMovies);
   } catch (error) {
     response
