@@ -1,12 +1,19 @@
-.cointainer-genre{
+.container-card{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container-genre{
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
+    gap: 6px;
+    width: 100%;
 }
 
-.affiche-genre{
-  font-size: 14px;
+.card-genre{
+  font-size: 12px;
   font-weight: 400;
   color: var(--grayscale-50);
 }
@@ -18,5 +25,18 @@
 }
 
 .card-movietoprated h3{
-    font-size: 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.container-note{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.card-note{
+    font-size: 16px;
+    font-weight: 400;
 }

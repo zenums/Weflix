@@ -8,6 +8,7 @@
     color: var(--grayscale-50);
     font-weight: 400;
     text-transform: capitalize;
-    font-size: 13px;
+    font-size: 12px;
     border: 1px solid var(--grayscale-70);
+    padding: 4px 8px;
  }

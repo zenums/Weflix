@@ -1,7 +1,7 @@
 import "./pegi.css";
 
 type Props = {
-  children: string;
+  children: string[];
 };
 
 export default function Pegi({children }: Props) {
