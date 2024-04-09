@@ -1,3 +1,5 @@
+import { Genre } from './genreTypes';
+
 export type MovieAPI = {
     page: number;
     results: Movie[];
@@ -8,7 +10,7 @@ export type MovieAPI = {
 export type Movie = {
     adult: boolean;
     backdrop_path: string | null;
-    genre_ids: number[];
+    genre_ids: number[] | string[];
     id: number;
     original_language: string;
     original_title: string;
@@ -20,10 +22,6 @@ export type Movie = {
     video: boolean;
     vote_average: number;
     vote_count: number;
-}
-export type Genre = {
-    id: number;
-    name: string;
 }
 export type MoviesbyGenre  = {
     genre: Genre; 

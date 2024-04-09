@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { Genre, Movie, MoviesbyGenre, MovieAPI } from "~/types/moviesTypes";
+import {Movie, MoviesbyGenre, MovieAPI } from "../types/moviesTypes";
+import { getApiMovieGenres } from "../utils/genres";
+import { Genre } from "../types/genreTypes";
 const {
-  getApiMovieGenres,
   getApiMoviesPopulars,
   getApiMoviesTopRated,
-  getApiMovieHeader,
 } = require("../utils/movies");
 
 const getMoviesPopulars = async (request: Request, response: Response) => {
@@ -32,7 +32,7 @@ const getMoviesPopularsbyGenre = async (
     const genres: Genre[] = await getApiMovieGenres();
 
     const moviesFilteredByGenre = movies.results.filter((movie: Movie) => {
-      return movie.genre_ids.includes(genreId);
+      return (movie.genre_ids as number[]).includes(genreId);
     });
 
     const genre = genres.find((genre: Genre) => genre.id === genreId);
@@ -60,8 +60,19 @@ const getMoviesPopularsbyGenre = async (
 
 const getMoviesTopRated = async (request: Request, response: Response) => {
   try {
-    const movies: Movie[] = await getApiMoviesTopRated();
-    const limitedMovies = movies.slice(0, 3);
+    const movies: MovieAPI = await getApiMoviesTopRated();
+    const limitedMovies = movies.results.slice(0, 3); // Limitez aux 3 premiers films
+
+    const genres: Genre[] = await getApiMovieGenres();
+    console.log(genres);
+
+    limitedMovies.forEach((movie: Movie) => {
+      movie.genre_ids = movie.genre_ids.map((genreId) => {
+        const genre: Genre | undefined = genres.find((g) => g.id === genreId);
+        return genre ? genre.name : "";
+      });
+    });
+
     response.status(200).json(limitedMovies);
   } catch (error) {
     response
@@ -72,6 +83,7 @@ const getMoviesTopRated = async (request: Request, response: Response) => {
       });
   }
 };
+
 
 
 

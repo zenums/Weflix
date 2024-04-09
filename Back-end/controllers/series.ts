@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 const { getApiSerieHeader } = require("../utils/series");
-import { Serie } from "~/types/seriesTypes";
+import { Serie  } from "~/types/seriesTypes";
 
 
 const getSerieHeader = async (request: Request, response: Response) => {
