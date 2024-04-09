@@ -5,6 +5,7 @@ export const getApiSerieHeader = async (serieId: string) => {
         const data = await get(`/3/tv/${serieId}?language=fr`);
         return data;
     } catch (error) {
-        console.error("Erreur lors de la récupération des informations de la série.");
+        console.error(error);
+        console.error("Erreur lors de la récupération des informations de la série Api.");
     }
 }

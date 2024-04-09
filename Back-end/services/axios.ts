@@ -2,7 +2,7 @@ const axios = require('axios');
 type AxiosRequestConfig = typeof axios.AxiosRequestConfig;
 type AxiosError = typeof axios.AxiosError;
 
-const tokenTMDB = process.env.TMDB_API_KEY || "Back-end/services/axios.ts";
+const tokenTMDB = process.env.TMDB_API_KEY;
 
 const instanceTMDB = axios.create({
     baseURL: "https://api.themoviedb.org",
