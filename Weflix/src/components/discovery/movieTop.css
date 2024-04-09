@@ -13,14 +13,6 @@
     font-size: 20px;
   }
 
-    .movietoprated-card{
-      width: 25%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 16px;
-  }
-
   .container-card{
       display: flex;
       flex-direction: column;
@@ -37,13 +29,14 @@
   .container-favoritesgenres{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
+    width: 100%;
   }
 
-  .favoritesgenres-tag{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+  .favoritesgenres-tag {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     gap: 10px;
   }
 

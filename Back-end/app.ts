@@ -6,6 +6,7 @@ require('dotenv').config();
 const app = express();
 const moviesRouter = require('./routes/movies');
 const seriesRouter = require('./routes/series');
+const genresRouter = require('./routes/genres');
 
 // ********************************
 const PORT = process.env.PORT || 3000;
@@ -15,7 +16,8 @@ app.use(cors({
 }))
     .use(express.json())
     .use('/movies', moviesRouter)
-    .use('/series', seriesRouter);
+    .use('/series', seriesRouter)
+    .use('/genres', genresRouter)
 
 app.listen(PORT, () => {
     console.log("Server running at PORT: ", PORT);

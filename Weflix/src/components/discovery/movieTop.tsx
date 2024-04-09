@@ -5,19 +5,34 @@ import CardMovieTopRated from "../topRated/cardMovieTopRated";
 import Tag from "../tag/tag";
 import Loading from "../loading/loading";
 import "./movieTop.css";
-import MovieType from '../../utils/type/movieType';
+import { Movie } from "../../utils/type/movieType";
+import { Genre } from "../../utils/type/genreType";
+import { moviesArraySchema, genresArraySchema } from "../../services/zod";
 
-
-export default function movieTop() {
+export default function MovieTop() {
   const { data: topMovies, isLoading } = useQuery(
     "topMovies",
     () => get("/movies/top-rated"),
     {
       onSuccess: (data) => {
-        console.log(data);
+        try {
+          moviesArraySchema.parse(data);
+        } catch (error) {
+          console.error("Erreur de validation des films:", error);
+        }
       },
     }
   );
+
+  const { data: genres } = useQuery("genre", () => get("/genres/movies"), {
+    onSuccess: (data) => {
+      try {
+        genresArraySchema.parse(data);
+      } catch (error) {
+        console.error("Erreur de validation des genres:", error);
+      }
+    },
+  });
 
   if (isLoading) return <Loading />;
 
@@ -27,7 +42,7 @@ export default function movieTop() {
         <div className="container-card">
           <h2>Top Movies</h2>
           <div className="card-film">
-            {topMovies.map((movie: MovieType, index: number) => {
+            {topMovies.map((movie: Movie, index: number) => {
               return (
                 <CardMovieTopRated
                   key={index}
@@ -35,7 +50,7 @@ export default function movieTop() {
                   adult={movie.adult}
                   title={movie.original_title}
                   vote={movie.vote_average}
-                  genres={movie.genre_ids}
+                  genres={movie.genre_ids.map(String)}
                 />
               );
             })}
@@ -48,14 +63,13 @@ export default function movieTop() {
       <div className="container-favoritesgenres">
         <h2>Favorites Genres</h2>
         <div className="favoritesgenres-tag">
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
-          <Tag variant="primary">Lorem</Tag>
+          {genres.map((genre: Genre, index: number) => {
+            return (
+              <Tag variant="secondary" key={index}>
+                {String(genre.name)}
+              </Tag>
+            );
+          })}
         </div>
       </div>
     </div>

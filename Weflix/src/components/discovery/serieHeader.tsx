@@ -9,7 +9,6 @@ import Play from "../../assets/play.png";
 import { SerieSchema } from "../../services/zod";
 
 export default function SerieHeader() {
-
   const serieId: string = "60625";
 
   const { data: serie, isLoading } = useQuery(
@@ -25,7 +24,10 @@ export default function SerieHeader() {
         }
       },
       onError: (error) => {
-        console.error("Erreur lors de la récupération des données de série :", error);
+        console.error(
+          "Erreur lors de la récupération des données de série :",
+          error
+        );
       },
     }
   );
@@ -35,12 +37,9 @@ export default function SerieHeader() {
   }
 
   return (
-    <div
-      className="container-header-movie"
-      
-    >
+    <div className="container-header-movie">
       <div className="header-movie-infos">
-        <Tag variant="secondary">Series</Tag>
+        <Tag variant="primary">Series</Tag>
         <h3>{serie.name}</h3>
         <div className="tagline">
           {serie.number_of_seasons} Seasons <Round />

@@ -14,5 +14,6 @@
     background: var(--grayscale-100);
 }
 .tag.secondary{
-    background: #302d31;
+    background: var(--grayscale-100);
+    width: 100%;
 }

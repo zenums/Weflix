@@ -1,13 +1,13 @@
-eexport type Movie = {
+export type Movie = {
     adult: boolean;
-    backdrop_path: string | null;
-    genre_ids: number[] | string[];
+    backdrop_path: string;
+    genre_ids: string[] | number[];
     id: number;
     original_language: string;
     original_title: string;
     overview: string;
     popularity: number;
-    poster_path: string | null;
+    poster_path: string;
     release_date: string;
     title: string;
     video: boolean;
