@@ -1,0 +1,13 @@
+.pegi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 30px;
+    border-radius: 12px;
+    color: var(--grayscale-50);
+    font-weight: 400;
+    text-transform: capitalize;
+    font-size: 13px;
+    border: 1px solid var(--grayscale-70);
+ }

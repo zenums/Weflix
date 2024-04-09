@@ -22,7 +22,7 @@
     height: 100vh;
     margin-top: 40px;;
     border-radius: 20px;
-    background: #666262;
+    color: #ffffff;
 }
 
 .container-header-movie {
@@ -48,13 +48,23 @@
   height: 100%;
   background: linear-gradient(to right, rgba(13, 12, 15, 0.5) 40%, transparent 100%);
 }
+.container-header-movie::before{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 70%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to right, rgba(13, 12, 15, 1) 5%, transparent 100%);
+}
 .header-movie-infos {
   display: flex;
   flex-direction: column;
   gap: 7px;
   align-items: flex-start;
   justify-content: center;
-  z-index: 1;
+  z-index: 2;
 }
 .header-movie-infos h3 {
   font-size: 40px;

@@ -1,5 +1,5 @@
 import SerieHeader from "../components/discovery/serieHeader"
-import MovieTopRated from "../components/discovery/movieTopRated"
+import MovieTop from "../components/discovery/movieTop"
 import '../components/discovery/discovery.css'
 
 export default function Discovery() {
@@ -9,7 +9,7 @@ export default function Discovery() {
         <SerieHeader />
       </div>
       <div className="bloc-secondary"> 
-        <MovieTopRated />
+        <MovieTop />
       </div>
     </div>
   )
