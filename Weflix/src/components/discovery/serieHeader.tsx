@@ -6,20 +6,26 @@ import Round from "../Round/round";
 import Button from "../button/button";
 import WatchlistIMG from "../../assets/watchlist.png";
 import Play from "../../assets/play.png";
+import { SerieSchema } from "../../services/zod";
 
-export default function MovieHeader() {
+export default function SerieHeader() {
 
   const serieId: string = "60625";
 
   const { data: serie, isLoading } = useQuery(
-    "movieHeader",
+    "serieHeader",
     () => get(`series/header/${serieId}`),
     {
       onSuccess: (data) => {
-        console.log(data);
+        try {
+          SerieSchema.parse(data);
+          console.log("Données de série valides :", data);
+        } catch (error) {
+          console.error("Erreur de validation des données de série :", error);
+        }
       },
       onError: (error) => {
-        console.error(error);
+        console.error("Erreur lors de la récupération des données de série :", error);
       },
     }
   );
