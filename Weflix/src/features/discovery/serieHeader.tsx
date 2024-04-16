@@ -1,9 +1,9 @@
 import { get } from "../../services/axios";
 import { useQuery } from "react-query";
-import Loading from "../loading/loading";
-import Tag from "../tag/tag";
-import Round from "../Round/round";
-import Button from "../button/button";
+import Loading from "../../components/loading/loading";
+import Tag from "../../components/tag/tag";
+import Round from "../../components/Round/round";
+import Button from "../../components/button/button";
 import WatchlistIMG from "../../assets/watchlist.png";
 import Play from "../../assets/play.png";
 import { SerieSchema } from "../../services/zod";

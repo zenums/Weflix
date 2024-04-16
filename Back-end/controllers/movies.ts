@@ -56,9 +56,12 @@ const getMoviesPopularsbyGenre = async (
 };
 
 const getMoviesTopRated = async (request: Request, response: Response) => {
+
+  const nbMovies = Number(request.params.nbMovies);
+
   try {
     const movies: MovieAPI = await getApiMoviesTopRated();
-    const limitedMovies = movies.results.slice(0, 3); // Limitez aux 3 premiers films
+    const limitedMovies = movies.results.slice(0, nbMovies); 
 
     const genres: Genre[] = await getApiMovieGenres();
 

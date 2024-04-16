@@ -8,7 +8,7 @@ Router.get("/populars", getMoviesPopulars);
 
 Router.get("/populars/:genreId", getMoviesPopularsbyGenre);
 
-Router.get("/top-rated", getMoviesTopRated);
+Router.get("/top-rated/:nbMovies", getMoviesTopRated);
 
 
 module.exports = Router;

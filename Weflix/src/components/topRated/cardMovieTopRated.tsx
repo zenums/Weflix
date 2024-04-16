@@ -21,6 +21,8 @@ export default function CardMovieTopRated({
   vote,
 }: typeProps) {
 
+  const displayedGenres = genres.slice(0, 2);
+
   return (
     <div className="card-movietoprated">
       <img className="movietoprated-card" src={`https://image.tmdb.org/t/p/w500${url}`} alt="" />
@@ -29,10 +31,10 @@ export default function CardMovieTopRated({
         <h3>{title}</h3>
         <div className="container-genre">
           <img src={CinemaIcon} alt="cinema icons" />
-          {genres.map((genre, index) => (
+          {displayedGenres.map((genre, index) => (
             <>
               <span key={index} className="card-genre">{genre}</span>
-              {index !== genres.length - 1 && <Round />}
+              {index !== displayedGenres.length - 1 && <Round />}
             </>
           ))}
         </div>

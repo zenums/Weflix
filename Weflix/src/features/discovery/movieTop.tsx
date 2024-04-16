@@ -1,9 +1,9 @@
 import { get } from "../../services/axios";
 import { useQuery } from "react-query";
-import Button from "../button/button";
-import CardMovieTopRated from "../topRated/cardMovieTopRated";
-import Tag from "../tag/tag";
-import Loading from "../loading/loading";
+import Button from "../../components/button/button";
+import CardMovieTopRated from "../../components/topRated/cardMovieTopRated";
+import Tag from "../../components/tag/tag";
+import Loading from "../../components/loading/loading";
 import "./movieTop.css";
 import { Movie } from "../../utils/type/movieType";
 import { Genre } from "../../utils/type/genreType";
@@ -12,7 +12,7 @@ import { moviesArraySchema, genresArraySchema } from "../../services/zod";
 export default function MovieTop() {
   const { data: topMovies, isLoading } = useQuery(
     "topMovies",
-    () => get("/movies/top-rated"),
+    () => get("/movies/top-rated/3"),
     {
       onSuccess: (data) => {
         try {

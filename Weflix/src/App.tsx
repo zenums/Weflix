@@ -1,5 +1,6 @@
 import './App.css'
 import Discovery from './views/discovery'
+import TopRated from './views/topRated'
 import TopNav from './components/navBar/topNav'
 import Main from './views/main/main'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
@@ -16,6 +17,7 @@ function App() {
         <Main>
           <Routes>
             <Route path="/" element={<Discovery />} />
+            <Route path="/top-rated" element={<TopRated />} />
           </Routes>
         </Main>
       </BrowserRouter>

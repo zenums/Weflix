@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    color: var(--grayscale-10);
+    width: 150px;
 }
 
 .container-genre{
@@ -9,7 +11,7 @@
     flex-direction: row;
     align-items: center;
     gap: 6px;
-    width: 100%;
+    width: 100%;;
 }
 
 .card-genre{
@@ -22,11 +24,16 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
+    width: 100%;
+    max-width: 270px;
 }
 
 .card-movietoprated h3{
     font-size: 16px;
     font-weight: bold;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis;
 }
 
 .container-note{
@@ -42,9 +49,9 @@
 }
 
 .movietoprated-card{
-    width: 28%;
+    width: 50%;
     height: 100%;
     object-fit: cover;
     object-position: center;
-    border-radius: 12px;
+    border-radius: 7px;
 }

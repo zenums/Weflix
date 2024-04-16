@@ -41,7 +41,8 @@
 
 /* NavLeft */
 .container-nav-left{
-    width: 250px;
+    width: 15%;
+    max-width: 250px;
     height: 100%;
     padding: 40px;
 }
